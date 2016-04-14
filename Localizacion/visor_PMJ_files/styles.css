@@ -1,0 +1,563 @@
+
+
+.leaflet-control-distance {
+	-moz-border-radius: 7px;
+	-webkit-border-radius: 7px;
+	border-radius: 7px;
+
+	padding: 5px;
+	background-color: rgba(0, 0, 0, 0.25);
+}
+
+.leaflet-control-distance a, .leaflet-control-distance div {
+	-moz-border-radius: 4px;
+	-webkit-border-radius: 4px;
+	border-radius: 4px;
+
+	padding: 2px;
+	background-position: 50% 50%;
+	background-repeat: no-repeat;
+	background-color: rgba(255, 255, 255, 0.75);
+}
+
+.leaflet-control-distance a {
+	width: 16px;
+	height: 16px;
+	display: inline-block;
+}
+
+.leaflet-control-distance div {
+	font: 11px/1.5 "Helvetica Neue", Arial, Helvetica, sans-serif;
+	color: #333;
+	height: 16px;
+	margin-top: 5px;
+	white-space: nowrap;
+}
+
+.leaflet-control-distance-edit {
+	/* http://openclipart.org/detail/114727/ftview-ruler-by-anonymous */
+	background-image: url('measure.png');
+}
+
+.leaflet-control-distance-delete {
+	margin-left: 5px;
+	/* Based on http://openclipart.org/detail/34729/architetto----tasto-8-by-anonymous */
+	background-image: url('cross.png');
+}
+
+a.leaflet-control-distance-active {
+	background-color: yellow;
+}
+
+input[type="radio"]{
+vertical-align:middle;
+}
+
+
+
+/*************INICIO Estilo para la pantallas diminutas *********/
+@media all and  (min-width: 200px)  and (max-width: 779px) {
+
+.localizador{
+padding: 6px 8px;
+font: 6px/9px Arial, Helvetica, sans-serif;
+background: white;
+background: rgba(255,255,255,0.8);
+box-shadow: 0 0 15px rgba(0,0,0,0.2);
+border-radius: 5px;
+width: 120px;
+height: 40px;
+z-index: 1000;
+}
+
+.localizador2{
+padding: 6px 8px;
+font: 7px/9px Arial, Helvetica, sans-serif;
+background: rgba(255,255,255,0.8);
+box-shadow: 0 0 15px rgba(0,0,0,0.2);
+border-radius: 5px;
+width: 150px;
+height: 100px;
+overflow: hidden
+z-index: 1000;
+}
+
+.localizador3{
+padding: 6px 8px;
+font: 7px/8px Arial, Helvetica, sans-serif;
+background: rgba(255,255,255,0.8);
+border-radius: 5px;
+width: 150px;
+}
+
+.localizador3 big{
+padding: 0px 8px;
+margin: 0px;
+
+font: 7px/9px Arial, Helvetica, sans-serif, bold;
+color: #045FB4;
+font-weight:bold;
+text-align:center;
+border-radius: 5px;
+align-content:center;
+}
+
+.localizador3 small{
+margin: 0px;
+
+font: 6px/8px Arial, Helvetica, sans-serif, bold;
+border-radius: 5px;
+
+}
+
+.localizador3 grey{
+font: 12px/16px Arial, Helvetica, sans-serif, bold;
+color: #696969;
+font-weight:bold;
+}
+
+.localizador big{
+padding: 0px 8px;
+margin: 0px;
+width: 284px;
+font: 9px/11px Arial, Helvetica, sans-serif, bold;
+color: #045FB4;
+font-weight:bold;
+text-align:center;
+border-radius: 5px;
+align-content:center;
+}
+
+.localizador3 td{
+vertical-align: middle;
+text-align:justify;
+align-content:center;
+padding: 0px 4px;
+}
+
+.tablacelda td,th{
+border: 2px solid white;
+}
+
+.tablacelda {
+width: 100%;
+}
+
+.tablacelda td{
+background-color: #D8D8D8;
+}
+
+.tablacelda td:hover {
+background-color: #F8E0E6;
+}
+
+.tablacelda th{
+color: white;
+background-color: #81BEF7;	
+}
+
+.tablacelda big{
+padding: 0px 8px;
+margin: 0px;
+width: 284px;
+font: 7px/9px Arial, Helvetica, sans-serif, bold;
+color: #045FB4;
+font-weight:bold;
+text-align:center;
+border-radius: 5px;
+align-content:center;
+}
+
+.localizador2 big{
+padding: 0px 8px;
+margin: 0px;
+width: 284px;
+font: 9px/11px Arial, Helvetica, sans-serif, bold;
+color: #045FB4;
+font-weight:bold;
+text-align:center;
+border-radius: 5px;
+align-content:center;
+}
+}
+
+
+
+/*************INICIO Estilo para la pantallas grandes 1025 x 4000 *********/
+@media all and  (min-width: 1025px) and (max-width: 4000px) {
+
+.localizador{
+padding: 6px 8px;
+font: 12px/14px Arial, Helvetica, sans-serif;
+background: white;
+background: rgba(255,255,255,0.8);
+box-shadow: 0 0 15px rgba(0,0,0,0.2);
+border-radius: 5px;
+width: 200px;
+height: 60px;
+z-index: 1000;
+}
+
+.localizador2{
+padding: 6px 8px;
+font: 12px/14px Arial, Helvetica, sans-serif;
+background: rgba(255,255,255,0.8);
+box-shadow: 0 0 15px rgba(0,0,0,0.2);
+border-radius: 5px;
+width: 200px;
+height: 115px;
+overflow: hidden
+z-index: 1000;
+}
+
+.localizador3{
+padding: 6px 8px;
+background: rgba(255,255,255,0.8);
+border-radius: 5px;
+width: 300px;
+}
+
+.localizador3 big{
+padding: 0px 8px;
+margin: 0px;
+width: 284px;
+font: 14px/16px Arial, Helvetica, sans-serif, bold;
+color: #045FB4;
+font-weight:bold;
+text-align:center;
+border-radius: 5px;
+align-content:center;
+}
+
+.localizador3 small{
+margin: 0px;
+width: 284px;
+font: 8px/10px Arial, Helvetica, sans-serif, bold;
+border-radius: 5px;
+
+}
+
+.localizador3 grey{
+font: 12px/16px Arial, Helvetica, sans-serif, bold;
+color: #696969;
+font-weight:bold;
+}
+
+.localizador big{
+padding: 0px 8px;
+margin: 0px;
+width: 284px;
+font: 14px/16px Arial, Helvetica, sans-serif, bold;
+color: #045FB4;
+font-weight:bold;
+text-align:center;
+border-radius: 5px;
+align-content:center;
+}
+
+.localizador3 td{
+vertical-align: middle;
+text-align:justify;
+align-content:center;
+padding: 0px 4px;
+}
+
+.tablacelda td,th{
+border: 2px solid white;
+}
+
+.tablacelda {
+width: 100%;
+}
+
+.tablacelda td{
+background-color: #D8D8D8;
+}
+
+.tablacelda td:hover {
+background-color: #F8E0E6;
+}
+
+.tablacelda th{
+color: white;
+background-color: #81BEF7;	
+}
+
+.tablacelda big{
+padding: 0px 8px;
+margin: 0px;
+width: 284px;
+font: 14px/16px Arial, Helvetica, sans-serif, bold;
+color: #045FB4;
+font-weight:bold;
+text-align:center;
+border-radius: 5px;
+align-content:center;
+}
+
+.localizador2 big{
+padding: 0px 8px;
+margin: 0px;
+width: 284px;
+font: 14px/16px Arial, Helvetica, sans-serif, bold;
+color: #045FB4;
+font-weight:bold;
+text-align:center;
+border-radius: 5px;
+align-content:center;
+}
+}
+
+/*CIERRA ESTILO*/
+
+/*************INICIO Estilo para la pantallas medianas 780 x 1024 *********/
+@media all and (min-width: 780px) and (max-width: 1024px)  {
+
+.localizador{
+padding: 6px 8px;
+font: 10px/12px Arial, Helvetica, sans-serif;
+background: white;
+background: rgba(255,255,255,0.8);
+box-shadow: 0 0 15px rgba(0,0,0,0.2);
+border-radius: 5px;
+width: 180px;
+height: 40px;
+z-index: 1000;
+}
+
+.localizador2{
+padding: 6px 8px;
+font: 10px/12px Arial, Helvetica, sans-serif;
+background: rgba(255,255,255,0.8);
+box-shadow: 0 0 15px rgba(0,0,0,0.2);
+border-radius: 5px;
+width: 180px;
+height: 100px;
+overflow: hidden
+z-index: 1000;
+}
+
+.localizador3{
+padding: 6px 8px;
+font: 10px/12px Arial, Helvetica, sans-serif;
+background: rgba(255,255,255,0.8);
+border-radius: 5px;
+width: 250px;
+}
+
+.localizador3 big{
+padding: 0px 8px;
+margin: 0px;
+width: 284px;
+font: 11px/13px Arial, Helvetica, sans-serif, bold;
+color: #045FB4;
+font-weight:bold;
+text-align:center;
+border-radius: 5px;
+align-content:center;
+}
+
+.localizador3 small{
+margin: 0px;
+width: 284px;
+font: 8px/10px Arial, Helvetica, sans-serif, bold;
+border-radius: 5px;
+
+}
+
+.localizador3 grey{
+font: 12px/16px Arial, Helvetica, sans-serif, bold;
+color: #696969;
+font-weight:bold;
+}
+
+.localizador big{
+padding: 0px 8px;
+margin: 0px;
+width: 284px;
+font: 11px/13px Arial, Helvetica, sans-serif, bold;
+color: #045FB4;
+font-weight:bold;
+text-align:center;
+border-radius: 5px;
+align-content:center;
+}
+
+.localizador3 td{
+vertical-align: middle;
+text-align:justify;
+align-content:center;
+padding: 0px 4px;
+}
+
+.tablacelda td,th{
+border: 2px solid white;
+}
+
+.tablacelda {
+width: 100%;
+}
+
+.tablacelda td{
+background-color: #D8D8D8;
+}
+
+.tablacelda td:hover {
+background-color: #F8E0E6;
+}
+
+.tablacelda th{
+color: white;
+background-color: #81BEF7;	
+
+}
+.tablacelda big{
+padding: 0px 8px;
+margin: 0px;
+width: 284px;
+font: 14px/16px Arial, Helvetica, sans-serif, bold;
+color: #045FB4;
+font-weight:bold;
+text-align:center;
+border-radius: 5px;
+align-content:center;
+}
+
+.localizador2 big{
+padding: 0px 8px;
+margin: 0px;
+width: 284px;
+font: 11px/13px Arial, Helvetica, sans-serif, bold;
+color: #045FB4;
+font-weight:bold;
+text-align:center;
+border-radius: 5px;
+align-content:center;
+}
+}
+
+/*************INICIO Estilo para la celulares y tabletas *********/
+@media only screen and (-webkit-device-pixel-ratio: 1.5) {
+
+.localizador{
+padding: 6px 8px;
+font: 6px/9px Arial, Helvetica, sans-serif;
+background: white;
+background: rgba(255,255,255,0.8);
+box-shadow: 0 0 15px rgba(0,0,0,0.2);
+border-radius: 5px;
+width: 120px;
+height: 40px;
+z-index: 1000;
+}
+
+.localizador2{
+padding: 6px 8px;
+font: 7px/9px Arial, Helvetica, sans-serif;
+background: rgba(255,255,255,0.8);
+box-shadow: 0 0 15px rgba(0,0,0,0.2);
+border-radius: 5px;
+width: 150px;
+height: 100px;
+overflow: hidden
+z-index: 1000;
+}
+
+.localizador3{
+padding: 6px 8px;
+font: 7px/8px Arial, Helvetica, sans-serif;
+background: rgba(255,255,255,0.8);
+border-radius: 5px;
+width: 150px;
+}
+
+.localizador3 big{
+padding: 0px 8px;
+margin: 0px;
+
+font: 7px/9px Arial, Helvetica, sans-serif, bold;
+color: #045FB4;
+font-weight:bold;
+text-align:center;
+border-radius: 5px;
+align-content:center;
+}
+
+.localizador3 small{
+margin: 0px;
+
+font: 6px/8px Arial, Helvetica, sans-serif, bold;
+border-radius: 5px;
+
+}
+
+.localizador3 grey{
+font: 12px/16px Arial, Helvetica, sans-serif, bold;
+color: #696969;
+font-weight:bold;
+}
+
+.localizador big{
+padding: 0px 8px;
+margin: 0px;
+width: 284px;
+font: 9px/11px Arial, Helvetica, sans-serif, bold;
+color: #045FB4;
+font-weight:bold;
+text-align:center;
+border-radius: 5px;
+align-content:center;
+}
+
+.localizador3 td{
+vertical-align: middle;
+text-align:justify;
+align-content:center;
+padding: 0px 4px;
+}
+
+.tablacelda td,th{
+border: 2px solid white;
+}
+
+.tablacelda {
+width: 100%;
+}
+
+.tablacelda td{
+background-color: #D8D8D8;
+}
+
+.tablacelda td:hover {
+background-color: #F8E0E6;
+}
+
+.tablacelda th{
+color: white;
+background-color: #81BEF7;	
+}
+
+.tablacelda big{
+padding: 0px 8px;
+margin: 0px;
+width: 284px;
+font: 7px/9px Arial, Helvetica, sans-serif, bold;
+color: #045FB4;
+font-weight:bold;
+text-align:center;
+border-radius: 5px;
+align-content:center;
+}
+
+.localizador2 big{
+padding: 0px 8px;
+margin: 0px;
+width: 284px;
+font: 9px/11px Arial, Helvetica, sans-serif, bold;
+color: #045FB4;
+font-weight:bold;
+text-align:center;
+border-radius: 5px;
+align-content:center;
+}
+}
