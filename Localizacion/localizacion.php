@@ -152,25 +152,27 @@ require_once("NS_geojson2016.php");
 <div id="leyenda" class="titlat4">
 	<input id="todas" type="checkbox" onclick="todaslascapas()"><label>Todas las capas</label><br>
 
-	<input id="checkAV2015" type="checkbox" checked="" onclick="leyendaccion()"><label>Áreas VIVAC 2015</label><span class="spaner" id="T_av_15"><script>var x=AV_15.features.length;
+	<input id="checkAV2015" type="checkbox" checked="" onclick="leyendaccion()"><img src="visor_PMJ_files/images/campamento.ico" width='5%'><label> Áreas VIVAC 2015</label><span class="spaner" id="T_av_15"><script>var x=AV_15.features.length;
 	document.getElementById("T_av_15").innerHTML=x;</script></span><br>
 	
-	<input id="checkAV2016" type="checkbox" checked="" onclick="leyendaccion()"><label>Áreas VIVAC 2016</label><span class="spaner" id="T_av_16"><script>var x=AV_16.features.length;
+	<input id="checkAV2016" type="checkbox" checked="" onclick="leyendaccion()"><img src="visor_PMJ_files/images/campamento2.ico" width='5%'><label> Áreas VIVAC 2016</label><span class="spaner" id="T_av_16"><script>var x=AV_16.features.length;
 	document.getElementById("T_av_16").innerHTML=x;</script></span><br>
 	
-	<input id="checkSR2015" type="checkbox" checked="" onclick="leyendaccion()"><label>Sector de Erradicación 2015</label><span class="spaner" id="T_sr_15"><script>var x=SR_15.features.length;
+	<input id="checkSR2015" type="checkbox" checked="" onclick="leyendaccion()"><img src="visor_PMJ_files/images/erradicacion.ico" width='5%'><label> Sector de Erradicación 2015</label><span class="spaner" id="T_sr_15"><script>var x=SR_15.features.length;
 	document.getElementById("T_sr_15").innerHTML=x;</script></span><br>
 	
-	<input id="checkSR2016" type="checkbox" checked="" onclick="leyendaccion()"><label>Sector de Erradicación 2016</label><span class="spaner" id="T_sr_16"><script>var x=SR_16.features.length;
+	<input id="checkSR2016" type="checkbox" checked="" onclick="leyendaccion()"><img src="visor_PMJ_files/images/erradicacion2.ico" width='5%'><label> Sector de Erradicación 2016</label><span class="spaner" id="T_sr_16"><script>var x=SR_16.features.length;
 	document.getElementById("T_sr_16").innerHTML=x;</script></span><br>
 	
-	<input id="checkNS2015" type="checkbox" checked="" onclick="leyendaccion()"><label>Novedades de seguridad 2015</label><span class="spaner" id="T_ns_15"><script>var x=NS_15.features.length;
+	<input id="checkNS2015" type="checkbox" checked="" onclick="leyendaccion()"><img src="visor_PMJ_files/images/alerta.ico" width='5%'><label> Novedades de seguridad 2015</label><span class="spaner" id="T_ns_15"><script>var x=NS_15.features.length;
 	document.getElementById("T_ns_15").innerHTML=x;</script></span><br>
 	
-	<input id="checkNS2016" type="checkbox" checked="" onclick="leyendaccion()"><label>Novedades de seguridad 2016</label><span class="spaner" id="T_ns_16"><script>var x=NS_16.features.length;
+	<input id="checkNS2016" type="checkbox" checked="" onclick="leyendaccion()"><img src="visor_PMJ_files/images/alerta2.ico" width='5%'><label> Novedades de seguridad 2016</label><span class="spaner" id="T_ns_16"><script>var x=NS_16.features.length;
 	document.getElementById("T_ns_16").innerHTML=x;</script></span><br>
 	
-	<input id="checkparques" type="checkbox"  onclick="leyendaccion()"><font color="#66A666" >&#9608</font><label>Parques Nacionales</label><span class="spaner">56</span><br>
+	<input id="den2014" type="checkbox"  onclick="leyendaccion()"><label>Densidad cultivos ilícitos</label><span class="spaner" id="T_ns_16">2014</span><br>
+	
+	<input id="checkparques" type="checkbox"  onclick="leyendaccion()"><font color="#66A666" >&#9608</font><label> Parques Nacionales</label><span class="spaner">56</span><br>
 	
 	<input id="checkresguardos" type="checkbox" onclick="leyendaccion()"><font color="#FE9A2E">&#9608 </font><label>Resguardos Indígenas</label><span class="spaner">653</span><br>
 	

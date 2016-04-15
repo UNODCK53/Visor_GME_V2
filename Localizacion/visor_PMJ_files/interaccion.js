@@ -1,11 +1,12 @@
 function leyendaccion(){
 //Cargar las capas
 if (document.getElementById("checkAV2015").checked == true){map.addLayer(AV_15_add);}else{map.removeLayer(AV_15_add)}
-if (document.getElementById("checkAV2016").checked == true){map.addLayer(markers2);}else{map.removeLayer(markers2)}
+if (document.getElementById("checkAV2016").checked == true){map.addLayer(AV_16_add);}else{map.removeLayer(AV_16_add)}
 if (document.getElementById("checkSR2015").checked == true){map.addLayer(markers3);}else{map.removeLayer(markers3)}
 if (document.getElementById("checkSR2016").checked == true){map.addLayer(markers4);}else{map.removeLayer(markers4)}
 if (document.getElementById("checkNS2015").checked == true){map.addLayer(markers5);}else{map.removeLayer(markers5)}
 if (document.getElementById("checkNS2016").checked == true){map.addLayer(markers6);}else{map.removeLayer(markers6)}
+if (document.getElementById("den2014").checked == true){map.addLayer(den);}else{map.removeLayer(den)}
 if (document.getElementById("checkparques").checked == true){parques_js.addTo(map)}else{map.removeLayer(parques_js)}
 if (document.getElementById("checkresguardos").checked == true){Resguardos_js.addTo(map)}else{map.removeLayer(Resguardos_js)}
 if (document.getElementById("checkleysegunda").checked == true){Ley2da_js.addTo(map)}else{map.removeLayer(Ley2da_js)}
@@ -40,6 +41,7 @@ function todaslascapas () {
 			document.getElementById("checkSR2016").checked = false;
 			document.getElementById("checkNS2015").checked = false;
 			document.getElementById("checkNS2016").checked = false;
+			document.getElementById("den2014").checked = false;
 			document.getElementById("checkparques").checked = false;
 			document.getElementById("checkresguardos").checked = false;
 			document.getElementById("checkleysegunda").checked = false;
@@ -53,6 +55,7 @@ function todaslascapas () {
 			document.getElementById("checkSR2016").checked = true;
 			document.getElementById("checkNS2015").checked = true;
 			document.getElementById("checkNS2016").checked = true;
+			document.getElementById("den2014").checked = true;
 			document.getElementById("checkparques").checked = true;
 			document.getElementById("checkresguardos").checked = true;
 			document.getElementById("checkleysegunda").checked = true;
@@ -212,7 +215,7 @@ function interaccion2014(feature, layer) {
 
 function AV_2015(feature, layer) {
 			if (feature.properties) {
-				var popupText = '<b><i>Información del Área VIVAC</b><hr>'+'Punto de Erradicación: ' + feature.properties.NOM_PE + '<br>'+'Área Vivac: ' + feature.properties.Num_AV + '<br>'+'Fecha de Ingreso: ' + feature.properties.FECHA_INTO_AV + '<br>'+'Apoyo Zonal: ' + feature.properties.NOM_APOYO + '<br><hr>';	
+				var popupText = '<b><i>Información del Área VIVAC</b><hr>'+'Punto de Erradicación: ' + feature.properties.NOM_PE + '<br>'+'Área Vivac: ' + feature.properties.Num_AV + '<br>'+'Fecha de Ingreso: ' + feature.properties.FECHA_INTO_AV + '<br>'+'Usuario: ' + feature.properties.NOM_APOYO + '<br>'+'Latitud: ' + layer._latlng.lat + '<br>'+'Longitud: ' + layer._latlng.lng +'<br><hr>';	
 				layer.bindPopup(popupText);
 				}
 };
@@ -221,7 +224,7 @@ function AV_2015(feature, layer) {
 
 function AV_2016(feature, layer) {
 			if (feature.properties) {
-				var popupText = '<b><i>Información del Área VIVAC</b><hr>'+'Punto de Erradicación: ' + feature.properties.NOM_PE + '<br>'+'Área Vivac: ' + feature.properties.Num_AV + '<br>'+'Fecha de Ingreso: ' + feature.properties.FECHA_INTO_AV + '<br>'+'Apoyo Zonal: ' + feature.properties.NOM_APOYO + '<br><hr>';	
+				var popupText = '<b><i>Información del Área VIVAC</b><hr>'+'Punto de Erradicación: ' + feature.properties.NOM_PE + '<br>'+'Área Vivac: ' + feature.properties.Num_AV + '<br>'+'Fecha de Ingreso: ' + feature.properties.FECHA_INTO_AV + '<br>'+'Usuario: ' + feature.properties.NOM_APOYO + '<br>'+'Latitud: ' + layer._latlng.lat + '<br>'+'Longitud: ' + layer._latlng.lng +'<br><hr>';	
 				layer.bindPopup(popupText);
 				}
 };
@@ -230,7 +233,7 @@ function AV_2016(feature, layer) {
 
 function SR_2015(feature, layer) {
 			if (feature.properties) {
-				var popupText = '<b><i>Información del Sitio de erradicación</b><hr>'+'Punto de Erradicación: ' + feature.properties.NOM_PE + '<br>'+'Fecha de reporte: ' + feature.properties.FECHA_REPORT + '<br><hr>';	
+				var popupText = '<b><i>Información del sector de erradicación</b><hr>'+'Punto de Erradicación: ' + feature.properties.NOM_PE + '<br>'+'Fecha de reporte: ' + feature.properties.FECHA_REPORT + '<br>'+'Latitud: ' + layer._latlng.lat + '<br>'+'Longitud: ' + layer._latlng.lng +'<br><hr>';	
 				layer.bindPopup(popupText);
 				}
 };
@@ -239,7 +242,7 @@ function SR_2015(feature, layer) {
 
 function SR_2016(feature, layer) {
 			if (feature.properties) {
-				var popupText = '<b><i>Información del Sitio de erradicación</b><hr>'+'Punto de Erradicación: ' + feature.properties.NOM_PE + '<br>'+'Fecha de reporte: ' + feature.properties.FECHA_REPORT + '<br><hr>';	
+				var popupText = '<b><i>Información del sector de erradicación</b><hr>'+'Punto de Erradicación: ' + feature.properties.NOM_PE + '<br>'+'Fecha de reporte: ' + feature.properties.FECHA_REPORT + '<br>'+'Latitud: ' + layer._latlng.lat + '<br>'+'Longitud: ' + layer._latlng.lng +'<br><hr>';	
 				layer.bindPopup(popupText);
 				}
 };
@@ -249,7 +252,7 @@ function SR_2016(feature, layer) {
 
 function NS_2015(feature, layer) {
 			if (feature.properties) {
-				var popupText = '<b><i>Novedad de seguridad</b><hr>'+'Punto de Erradicación: ' + feature.properties.NOM_PE + '<br>'+'Fecha de reporte: ' + feature.properties.FECHA_REPORT;
+				var popupText = '<b><i>Novedad de seguridad</b><hr>'+'Punto de Erradicación: ' + feature.properties.NOM_PE + '<br>'+'Fecha de reporte: ' + feature.properties.FECHA_REPORT+'<br>'+'Latitud: ' + layer._latlng.lat + '<br>'+'Longitud: ' + layer._latlng.lng;
 				if (feature.properties.AEI_controlado=="1")	{
 					popupText=popupText+'<br>Tipo de Novedad: AEI controlado'
 				}
@@ -287,7 +290,7 @@ function NS_2015(feature, layer) {
 
 function NS_2016(feature, layer) {
 			if (feature.properties) {
-				var popupText = '<b><i>Novedad de seguridad</b><hr>'+'Punto de Erradicación: ' + feature.properties.NOM_PE + '<br>'+'Fecha de reporte: ' + feature.properties.FECHA_REPORT;
+				var popupText = '<b><i>Novedad de seguridad</b><hr>'+'Punto de Erradicación: ' + feature.properties.NOM_PE + '<br>'+'Fecha de reporte: ' + feature.properties.FECHA_REPORT +'<br>'+'Latitud: ' + layer._latlng.lat + '<br>'+'Longitud: ' + layer._latlng.lng;
 				if (feature.properties.AEI_controlado=="1")	{
 					popupText=popupText+'<br>Tipo de Novedad: AEI controlado'
 				}
