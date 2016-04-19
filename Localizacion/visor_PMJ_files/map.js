@@ -41,41 +41,123 @@
 		//Simbología
 		
 		var CampingIcon = L.icon({
-			iconUrl: 'campamento.ico',
-			iconSize:     [40, 40], // size of the icon
-			iconAnchor:   [22, 94], // point of the icon which will correspond to marker's location
-			popupAnchor:  [-3, -76] // point from which the popup should open relative to the iconAnchor
+			iconUrl: 'visor_PMJ_files/images/campamento.ico',
+			iconSize:     [20, 20], // size of the icon
+			iconAnchor:   [20, 20], // point of the icon which will correspond to marker's location
+			popupAnchor:  [-11, -20] // point from which the popup should open relative to the iconAnchor
 		});
 		
-		L.marker([4, -74],{icon: CampingIcon}).addTo(map);	
+		var CampingIcon2 = L.icon({
+			iconUrl: 'visor_PMJ_files/images/campamento2.ico',
+			iconSize:     [20, 20], // size of the icon
+			iconAnchor:   [20, 20], // point of the icon which will correspond to marker's location
+			popupAnchor:  [-11, -20] // point from which the popup should open relative to the iconAnchor
+		});
+		
+		var erradicacion = L.icon({
+			iconUrl: 'visor_PMJ_files/images/erradicacion.ico',
+			iconSize:     [20, 20], // size of the icon
+			iconAnchor:   [20, 20], // point of the icon which will correspond to marker's location
+			popupAnchor:  [-11, -20] // point from which the popup should open relative to the iconAnchor
+		});
+		
+		var erradicacion2 = L.icon({
+			iconUrl: 'visor_PMJ_files/images/erradicacion2.ico',
+			iconSize:     [20, 20], // size of the icon
+			iconAnchor:   [20, 20], // point of the icon which will correspond to marker's location
+			popupAnchor:  [-11, -20] // point from which the popup should open relative to the iconAnchor
+		});
+		
+		var alerta = L.icon({
+			iconUrl: 'visor_PMJ_files/images/alerta.ico',
+			iconSize:     [20, 20], // size of the icon
+			iconAnchor:   [20, 20], // point of the icon which will correspond to marker's location
+			popupAnchor:  [-11, -20] // point from which the popup should open relative to the iconAnchor
+		});
+		
+		var alerta2 = L.icon({
+			iconUrl: 'visor_PMJ_files/images/alerta2.ico',
+			iconSize:     [20, 20], // size of the icon
+			iconAnchor:   [20, 20], // point of the icon which will correspond to marker's location
+			popupAnchor:  [-11, -20] // point from which the popup should open relative to the iconAnchor
+		});
+		
+		var mira = L.icon({
+			iconUrl: 'visor_PMJ_files/images/mira.ico',
+			iconSize:     [20, 20], // size of the icon
+			iconAnchor:   [20, 20], // point of the icon which will correspond to marker's location
+			popupAnchor:  [-11, -20] // point from which the popup should open relative to the iconAnchor
+		});
 		
 		//CARGAR CAPAS
 		
 		//CAPAS GME
 		
-		var AV_15_add = L.geoJson(AV_15,{onEachFeature: AV_2015});
-		var AV_16_add = L.geoJson(AV_16,{onEachFeature: AV_2016});
-		var SR_15_add = L.geoJson(SR_15,{onEachFeature: SR_2015});
-		var SR_16_add = L.geoJson(SR_16,{onEachFeature: SR_2016});
-		var NS_15_add = L.geoJson(NS_15,{onEachFeature: NS_2015});
-		var NS_16_add = L.geoJson(NS_16,{onEachFeature: NS_2016});
+		var AV_15_add = L.geoJson(AV_15,{
+			pointToLayer: function(feature, latlng) {
+                return L.marker(latlng, {icon: CampingIcon});
+            },
+			onEachFeature: AV_2015}).addTo(map);
+		
+		var AV_16_add = L.geoJson(AV_16,{
+			pointToLayer: function(feature, latlng) {
+                return L.marker(latlng, {icon: CampingIcon2});
+            },
+			onEachFeature: AV_2016}).addTo(map);
+		var SR_15_add = L.geoJson(SR_15,{
+			pointToLayer: function(feature, latlng) {
+                return L.marker(latlng, {icon: erradicacion});
+            },
+			onEachFeature: SR_2015});
+		var SR_16_add = L.geoJson(SR_16,{
+			pointToLayer: function(feature, latlng) {
+                return L.marker(latlng, {icon: erradicacion2});
+            },
+			onEachFeature: SR_2016});
+		var NS_15_add = L.geoJson(NS_15,{
+			pointToLayer: function(feature, latlng) {
+                return L.marker(latlng, {icon: alerta});
+            },
+			onEachFeature: NS_2015});
+		var NS_16_add = L.geoJson(NS_16,{
+			pointToLayer: function(feature, latlng) {
+                return L.marker(latlng, {icon: alerta2});
+            },
+			onEachFeature: NS_2016});
+		
+		var den = L.tileLayer.wms("http://geoserver.unodc.org.co/geoserver/Censo/wms?", {
+			layers: 'cen_densidad_2014',
+			format: 'image/png',
+			transparent: true,
+			version: '1.1.0',
+			//attribution: "Naciones Unidas - UNODC - Colombia - SIMCI "
+		});
+		
+		var style_AVB_15 = {"color":"#343F4E","fillColor": "#343F4E", "dashArray": '5',"weight": 1.5, "opacity": 0.9 };
+		var AVB_15_add = L.geoJson(AVB_15,{style: style_AVB_15, onEachFeature: AVB_2015}).addTo(map);
+		
+		var style_AVB_16 = {"color":"#91A961","fillColor": "#91A961", "dashArray": '5',"weight": 1.5, "opacity": 0.9 };
+		var AVB_16_add = L.geoJson(AVB_16,{style: style_AVB_16, onEachFeature: AVB_2016}).addTo(map);
+		
+		
 		//var tf_fo12 = new L.geoJson(tf_fo_2012, {style: Style_fo_12, onEachFeature: onEachFeature1}).addTo(map);
 		//var markers1 = L.markerClusterGroup();
-		var markers2 = L.markerClusterGroup();
+		//var markers2 = L.markerClusterGroup();
 		var markers3 = L.markerClusterGroup();
 		var markers4 = L.markerClusterGroup();
 		var markers5 = L.markerClusterGroup();
 		var markers6 = L.markerClusterGroup();
 		var eye1 = new L.Marker(new L.LatLng(90,0));//var aleatoria de referencia
 		//markers1.addLayer(AV_15_add).addLayers([eye1]);
-		markers2.addLayer(AV_16_add).addLayers([eye1]);
+		//markers2.addLayer(AV_16_add).addLayers([eye1]);
 		markers3.addLayer(SR_15_add).addLayers([eye1]);
 		markers4.addLayer(SR_16_add).addLayers([eye1]);
 		markers5.addLayer(NS_15_add).addLayers([eye1]);
 		markers6.addLayer(NS_16_add).addLayers([eye1]);
 		//map.addLayer(AV_15_add, {icon: CampingIcon});
-		AV_15_add({icon: CampingIcon}).addTo(map)
-		map.addLayer(markers2);
+		//AV_15_add({icon: CampingIcon}).addTo(map)
+		//map.addLayer(markers1);
+		//map.addLayer(markers2);
 		map.addLayer(markers3);
 		map.addLayer(markers4);
 		map.addLayer(markers5);
@@ -150,9 +232,10 @@
 		var baseMaps = {
 		"Mapa Base": topoMap_2,
 		"Mapa topográfico": topoMap_3,
-		"Mapa Satelital Google" : googleLayer_satellite	
+		"Mapa Satelital Google" : googleLayer_satellite,
+		//"Densidad": den
 		};
-		var capas = {'<a><font color="#74DF00" size="1">&#9608&#9608 </font></a>Ley Segunda de 1959': Ley2da_js, '<a><font color="#66A666" size="1">&#9608&#9608 </font></a>Parques Nacionales': parques_js, '<a><font color="#FE9A2E" size="1">&#9608&#9608 </font></a>Resguardos Indígenas': Resguardos_js, '<a><font color="#CB901A" size="1">&#9608&#9608 </font></a>Tierra Colectiva': tc_js}; 
+		var capas = {'<a></a>Densidad': den }; 
 		
 		// +'<a href="visor_PMJ_files/Territorios_2014.rar"><img src="visor_PMJ_files/dowload.png" alt="Territorios_2014"/></a>'
 		
@@ -192,7 +275,7 @@
 		new L.Control.Zoom({ position: 'topright'}).addTo(map);
 		L.Control.measureControl({position: 'topright'}).addTo(map); //Botón para medir distancias
 		extend.addTo(map); //Botón para extend
-		L.control.layers(baseMaps,{position: 'topright', collapsed: false}).addTo(map); //Control Base Mapas		
+		L.control.layers(baseMaps,capas,{position: 'topright', collapsed: true}).addTo(map); //Control Base Mapas		
 		
 		//LOCALIZACIÓN AJUSTADA
 		
@@ -213,7 +296,7 @@
 		}
 		else{
 		
-		localizacion2.innerHTML="<h2 class='titlat3'>Latitud</h2><center><INPUT type='text' style='width:50%;height:15px' name='Latitud' id='Latitud' title='Ingrese un valor entre -4 y 13.' onfocus='function_a(this)' onblur='function_b(this)'></center><h2 class='titlat3'>Longitud</h2><center><INPUT type='text' style='width:50%;height:15px' name='Longitud' id='Longitud' title='Ingrese un valor entre 0 y 59' onfocus='function_g(this)' onblur='function_h(this)'><h2 class='titlat3'><INPUT type='submit' value='Geolocalizar' onclick = 'geoloc(Latitud.value,Longitud.value)'></center></h2>";
+		localizacion2.innerHTML="<h2 class='titlat3'>Latitud</h2><center><INPUT type='text' style='width:50%;height:15px' name='Latitud' id='Latitud' title='Ingrese un valor entre -4 y 13.' onfocus='function_a(this)' onblur='function_b(this)'></center><h2 class='titlat3'>Longitud</h2><center><INPUT type='text' style='width:50%;height:15px' name='Longitud' id='Longitud' title='Ingrese un valor entre -80 y -67' onfocus='function_g(this)' onblur='function_h(this)'><h2 class='titlat3'><INPUT type='submit' value='Geolocalizar' onclick = 'geoloc(Latitud.value,Longitud.value)'></center></h2>";
 		}
 		}
 				
@@ -247,14 +330,14 @@
 			try {
 				map.removeLayer(marker);
 				var Limites=[[parseFloat(Lat) + 0.5, parseFloat(Long) - 0.5],[parseFloat(Lat) - 0.5, parseFloat(Long) + 0.5]]
-				marker = new L.Marker([Lat,Long], {draggable:true});
+				marker = new L.Marker([Lat,Long], {icon: mira}).bindPopup("I'm here");
 				map.addLayer(marker);
 				map.fitBounds(Limites);				
 			}
 			catch(err) {
 				var Limites=[[parseFloat(Lat) + 0.5, parseFloat(Long) - 0.5],[parseFloat(Lat) - 0.5, parseFloat(Long) + 0.5]]
 				
-				marker = new L.Marker([Lat,Long]);
+				marker = new L.Marker([Lat,Long],{icon: mira}).bindPopup("I'm here");
 				map.addLayer(marker);
 				map.fitBounds(Limites);				
 			}
@@ -280,14 +363,14 @@
 			try {
 				map.removeLayer(marker);
 				var Limites=[[parseFloat(Lat) + 0.5, parseFloat(Long) - 0.5],[parseFloat(Lat) - 0.5, parseFloat(Long) + 0.5]]
-				marker = new L.Marker([Lat,Long], {draggable:true});
+				marker = new L.Marker([Lat,Long], {icon: mira}).bindPopup("I'm here");
 				map.addLayer(marker);
 				map.fitBounds(Limites);				
 			}
 			catch(err) {
 				var Limites=[[parseFloat(Lat) + 0.5, parseFloat(Long) - 0.5],[parseFloat(Lat) - 0.5, parseFloat(Long) + 0.5]]
 				
-				marker = new L.Marker([Lat,Long]);
+				marker = new L.Marker([Lat,Long],{icon: mira}).bindPopup("I'm here");
 				map.addLayer(marker);
 				map.fitBounds(Limites);				
 			}
@@ -372,8 +455,9 @@
 				 }
 			}
 
+		//CONTROL EXTEND
 		
-		
+		new L.Control.FullScreen({ position: 'topright', forcePseudoFullscreen: true }).addTo(map);
 		
 		//Control Mouse Position
 		
