@@ -1,7 +1,9 @@
 function leyendaccion(){
 //Cargar las capas
 if (document.getElementById("checkAV2015").checked == true){map.addLayer(AV_15_add);}else{map.removeLayer(AV_15_add)}
+if (document.getElementById("checkAV2015").checked == true){map.addLayer(AVB_15_add);}else{map.removeLayer(AVB_15_add)}
 if (document.getElementById("checkAV2016").checked == true){map.addLayer(AV_16_add);}else{map.removeLayer(AV_16_add)}
+if (document.getElementById("checkAV2016").checked == true){map.addLayer(AVB_16_add);}else{map.removeLayer(AVB_16_add)}
 if (document.getElementById("checkSR2015").checked == true){map.addLayer(markers3);}else{map.removeLayer(markers3)}
 if (document.getElementById("checkSR2016").checked == true){map.addLayer(markers4);}else{map.removeLayer(markers4)}
 if (document.getElementById("checkNS2015").checked == true){map.addLayer(markers5);}else{map.removeLayer(markers5)}
@@ -215,7 +217,7 @@ function interaccion2014(feature, layer) {
 
 function AV_2015(feature, layer) {
 			if (feature.properties) {
-				var popupText = '<b><i>Información del Área VIVAC</b><hr>'+'Punto de Erradicación: ' + feature.properties.NOM_PE + '<br>'+'Área Vivac: ' + feature.properties.Num_AV + '<br>'+'Fecha de Ingreso: ' + feature.properties.FECHA_INTO_AV + '<br>'+'Usuario: ' + feature.properties.NOM_APOYO + '<br>'+'Latitud: ' + layer._latlng.lat + '<br>'+'Longitud: ' + layer._latlng.lng +'<br><hr>';	
+				var popupText = '<b><i>Información del Área VIVAC</b><hr>'+'Punto de Erradicación: ' + feature.properties.NOM_PE + '<br>'+'Área Vivac: ' + feature.properties.Num_AV + '<br>'+'Fecha de Ingreso: ' + feature.properties.FECHA_INTO_AV + '<br>'+'Usuario: ' + feature.properties.USUARIO + '<br>'+'Latitud: ' + layer._latlng.lat + '<br>'+'Longitud: ' + layer._latlng.lng +'<br><hr>';	
 				layer.bindPopup(popupText);
 				}
 };
@@ -224,7 +226,7 @@ function AV_2015(feature, layer) {
 
 function AV_2016(feature, layer) {
 			if (feature.properties) {
-				var popupText = '<b><i>Información del Área VIVAC</b><hr>'+'Punto de Erradicación: ' + feature.properties.NOM_PE + '<br>'+'Área Vivac: ' + feature.properties.Num_AV + '<br>'+'Fecha de Ingreso: ' + feature.properties.FECHA_INTO_AV + '<br>'+'Usuario: ' + feature.properties.NOM_APOYO + '<br>'+'Latitud: ' + layer._latlng.lat + '<br>'+'Longitud: ' + layer._latlng.lng +'<br><hr>';	
+				var popupText = '<b><i>Información del Área VIVAC</b><hr>'+'Punto de Erradicación: ' + feature.properties.NOM_PE + '<br>'+'Área Vivac: ' + feature.properties.Num_AV + '<br>'+'Fecha de Ingreso: ' + feature.properties.FECHA_INTO_AV + '<br>'+'Usuario: ' + feature.properties.USUARIO + '<br>'+'Latitud: ' + layer._latlng.lat + '<br>'+'Longitud: ' + layer._latlng.lng +'<br><hr>';	
 				layer.bindPopup(popupText);
 				}
 };
@@ -321,4 +323,38 @@ function NS_2016(feature, layer) {
 				popupText=popupText+'<hr>'
 				layer.bindPopup(popupText);
 				}
+};
+
+//AVB_2015
+
+//función que redefine el borde después de pasar con el mouse
+function resetbordeAVB_2015(e) {
+	AVB_15_add.resetStyle(e.target);
+};
+
+function AVB_2015(feature, layer) {
+	var popupText = '<b><i>Información del Área VIVAC</b><hr>'+'Punto de Erradicación: ' + feature.properties.NOM_PE + '<br>'+'Área Vivac: ' + feature.properties.AV + '<br>'+'Fecha de Ingreso: ' + feature.properties.FECHA_INTO + '<br>'+'Usuario: ' + feature.properties.USUARIO +'<br><hr>';
+	layer.bindPopup(popupText);
+	layer.on({
+				mouseover: borde,
+				mouseout: resetbordeAVB_2015,
+	});
+	//intersection(popupText,layer);
+};
+
+//AVB_2015
+
+//función que redefine el borde después de pasar con el mouse
+function resetbordeAVB_2016(e) {
+	AVB_16_add.resetStyle(e.target);
+};
+
+function AVB_2016(feature, layer) {
+	var popupText = '<b><i>Información del Área VIVAC</b><hr>'+'Punto de Erradicación: ' + feature.properties.NOM_PE + '<br>'+'Área Vivac: ' + feature.properties.AV + '<br>'+'Fecha de Ingreso: ' + feature.properties.FECHA_INTO + '<br>'+'Usuario: ' + feature.properties.USUARIO +'<br><hr>';
+	layer.bindPopup(popupText);
+	layer.on({
+				mouseover: borde,
+				mouseout: resetbordeAVB_2016,
+	});
+	//intersection(popupText,layer);
 };

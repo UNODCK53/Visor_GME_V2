@@ -3,7 +3,7 @@
     include_once("connection.php");
     
     // CHANGE MySQL TO JSON :
-    $SQL = "SELECT Num_AV, NOM_PE, FECHA_INTO_AV, USUARIO, astext(punto) as shape FROM `control_vivac` WHERE `AÑO`='15' and `USUARIO` <> 'tester'";
+    $SQL = "SELECT AV, NOM_PE, FECHA_INTO, USUARIO, astext(SHAPE) as shape FROM `areas_vivac_buffer` WHERE `AÑO`='16' and `USUARIO` <> 'tester'";
     $result = mysql_query($SQL, $connection);
     $features = array();    
     while($row = mysql_fetch_array($result)){
@@ -12,10 +12,10 @@
         $features[] = array( 
         			"type" => "Feature",
         			"properties" => array(
-		        			"Num_AV" => $row["Num_AV"],
+		        			"AV" => $row["AV"],
 		        			"NOM_PE" => $row["NOM_PE"],
 							"USUARIO" => $row["USUARIO"],
-							"FECHA_INTO_AV" => $row["FECHA_INTO_AV"],
+							"FECHA_INTO" => $row["FECHA_INTO"],
 	        			),
         			"geometry" => json_decode($json),
 	        );
@@ -24,6 +24,6 @@
     		"type" => "FeatureCollection",
     		"features" => $features,
     	);
-	$AV15=$feature_collection;
+	$AVB16=$feature_collection;
 	//echo json_encode($feature_collection, true);
 ?>

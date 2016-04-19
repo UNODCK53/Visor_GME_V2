@@ -3,7 +3,7 @@
     include_once("connection.php");
     
     // CHANGE MySQL TO JSON :
-    $SQL = "SELECT Num_AV, NOM_PE, FECHA_INTO_AV, NOM_APOYO, astext(punto) as shape FROM `control_vivac` WHERE `AÑO`='16' and `USUARIO` <> 'tester'";
+    $SQL = "SELECT Num_AV, NOM_PE, FECHA_INTO_AV, USUARIO, astext(punto) as shape FROM `control_vivac` WHERE `AÑO`='16' and `USUARIO` <> 'tester'";
     $result = mysql_query($SQL, $connection);
     $features = array();    
     while($row = mysql_fetch_array($result)){
@@ -14,7 +14,7 @@
         			"properties" => array(
 		        			"Num_AV" => $row["Num_AV"],
 		        			"NOM_PE" => $row["NOM_PE"],
-							"NOM_APOYO" => $row["NOM_APOYO"],
+							"USUARIO" => $row["USUARIO"],
 							"FECHA_INTO_AV" => $row["FECHA_INTO_AV"],
 	        			),
         			"geometry" => json_decode($json),

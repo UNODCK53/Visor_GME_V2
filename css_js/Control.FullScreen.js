@@ -8,7 +8,7 @@ L.Control.FullScreen = L.Control.extend({
 		forcePseudoFullscreen: false
 	},
 	
-	onAdd: function (map) {
+	onAdd: function (big) {
 		var className = 'leaflet-control-zoom-fullscreen', container;
 		
 		if (map.zoomControl && !this.options.forceSeparateButton) {
@@ -17,7 +17,7 @@ L.Control.FullScreen = L.Control.extend({
 			container = L.DomUtil.create('div', 'leaflet-bar');
 		}
 		
-		this._createButton(this.options.title, className, container, this.toggleFullScreen, map);
+		this._createButton(this.options.title, className, container, this.toggleFullScreen, big);
 
 		return container;
 	},
