@@ -7,39 +7,35 @@
 
 <link rel="stylesheet" href="http://cdn.leafletjs.com/leaflet/v0.7.7/leaflet.css" />
 <script src="http://cdn.leafletjs.com/leaflet/v0.7.7/leaflet.js"></script>
-<link rel="stylesheet" href="../css_js/leaflet-search.css" >
-<link rel="stylesheet" href="../css_js/leaflet.css" />
-<script "text/javascript"  src="../css_js/leaflet-search.js"></script>
 
-<link rel="icon" href="../css_js/images/world.ico" type="image/x-icon">
+<link rel="stylesheet" href="./visor_PMJ_files/css/leaflet.css"/>
+<script "text/javascript"  src="./visor_PMJ_files/js/leaflet-search.js"></script>
+<link rel="stylesheet" href="./visor_PMJ_files/css/leaflet-search.css" >
+
+<link rel="icon" href="./visor_PMJ_files/images/world.ico" type="image/x-icon">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<script type="text/javascript" src="../css_js/jquery.min.js"></script>
+<script type="text/javascript" src="./visor_PMJ_files/js/jquery.min.js"></script>
 
 <link rel="stylesheet" type="text/css" href="http://w2ui.com/src/w2ui-1.4.2.min.css" />
 <script type="text/javascript" src="http://w2ui.com/src/w2ui-1.4.2.min.js"></script>
 
-
-
-<link rel="stylesheet" href="../css_js/Newmapstyle.css" />
-<link rel="stylesheet" href="./visor_PMJ_files/stylesnew.css" />
+<link rel="stylesheet" href="./visor_PMJ_files/css/Newmapstyle.css"/>
+<link rel="stylesheet" href="./visor_PMJ_files/css/stylesnew.css" />
 <script type="text/javascript" src="https://www.google.com/jsapi?key="></script>
 <script src="http://maps.google.com/maps/api/js?v=3&sensor=false"></script>
-<script src="../css_js/Google.js"></script>
-<script src="../css_js/Control.FullScreen.js"></script>
-<link rel="stylesheet" href="../css_js/map_styles2.css" />
+<script src="./visor_PMJ_files/js/Google.js"></script>
+<script src="./visor_PMJ_files/js/Control.FullScreen.js"></script>
+<link rel="stylesheet" href="./visor_PMJ_files/css/map_styles2.css" />
+<script src="./visor_PMJ_files/js/L.Control.MousePosition.js"></script>
 
-<script src="../css_js/L.Control.MousePosition.js"></script>
-<script src="../css_js/Control.FullScreen.js"></script>
-
-
-<script src="../css_js/leaflet-pip.js"></script>
-<script src="./visor_PMJ_files/interaccion.js"></script>
-<script src="./visor_PMJ_files/intersection.js"></script>
-<script src="./visor_PMJ_files/results.js"></script>
-<link rel="stylesheet" href="./visor_PMJ_files/MarkerCluster.css" />
-<link rel="stylesheet" href="./visor_PMJ_files/MarkerCluster.Default.css" />
-<script src="./visor_PMJ_files/leaflet.markercluster-src.js"></script>
+<script src="./visor_PMJ_files/js/leaflet-pip.js"></script>
+<script src="./visor_PMJ_files/js/interaccion.js"></script>
+<script src="./visor_PMJ_files/js/intersection.js"></script>
+<script src="./visor_PMJ_files/js/results.js"></script>
+<link rel="stylesheet" href="./visor_PMJ_files/css/MarkerCluster.css" />
+<link rel="stylesheet" href="./visor_PMJ_files/css/MarkerCluster.Default.css" />
+<script src="./visor_PMJ_files/js/leaflet.markercluster-src.js"></script>
 <script src="./visor_PMJ_files/leaflet-draw/src/Leaflet.draw.js"></script>
 <link rel="stylesheet" href="./visor_PMJ_files/leaflet-draw/dist/leaflet.draw.css" />
 <script src="./visor_PMJ_files/leaflet-draw/src/edit/handler/Edit.Poly.js"></script>
@@ -66,9 +62,9 @@
 <script src="./visor_PMJ_files/leaflet-draw/src/edit/EditToolbar.js"></script>
 <script src="./visor_PMJ_files/leaflet-draw/src/edit/handler/EditToolbar.Edit.js"></script>
 <script src="./visor_PMJ_files/leaflet-draw/src/edit/handler/EditToolbar.Delete.js"></script>
-<link rel="stylesheet" href="./visor_PMJ_files/leaflet.measurecontrol.css" />
-<script src="./visor_PMJ_files/leaflet.measurecontrol.js"></script>
-<script src="./visor_PMJ_files/Draw.Polyline.js"></script>
+<link rel="stylesheet" href="./visor_PMJ_files/css/leaflet.measurecontrol.css" />
+<script src="./visor_PMJ_files/js/leaflet.measurecontrol.js"></script>
+<script src="./visor_PMJ_files/js/Draw.Polyline.js"></script>
 
 
 <script language="JavaScript">
@@ -167,14 +163,14 @@
 </script>
 
 <?php
-require_once("AV_geojson2015.php");
-require_once("AV_geojson2016.php");
-require_once("SR_geojson2015.php");
-require_once("SR_geojson2016.php");
-require_once("NS_geojson2015.php");
-require_once("NS_geojson2016.php");
-require_once("AVB_geojson2015.php");
-require_once("AVB_geojson2016.php");
+require_once("./visor_PMJ_files/php/AV_geojson2015.php");
+require_once("./visor_PMJ_files/php/AV_geojson2016.php");
+require_once("./visor_PMJ_files/php/SR_geojson2015.php");
+require_once("./visor_PMJ_files/php/SR_geojson2016.php");
+require_once("./visor_PMJ_files/php/NS_geojson2015.php");
+require_once("./visor_PMJ_files/php/NS_geojson2016.php");
+require_once("./visor_PMJ_files/php/AVB_geojson2015.php");
+require_once("./visor_PMJ_files/php/AVB_geojson2016.php");
 
 
 ?>
@@ -192,9 +188,9 @@ require_once("AVB_geojson2016.php");
 <body >
 <div id="big">
 <div id="datos">
-<div id="headimages"><img src="../css_js/images/geografica.png" width="100%" onclick="toggleFullScreen()"></div>
+<div id="headimages"><img src="./visor_PMJ_files/images/geografica.png" width="100%" onclick="toggleFullScreen()"></div>
 <div id="titulo">
-<h2 class="titlat2"><table width="100%" height="100%"><tr><td width="85%" style="vertical-align:middle">Visor geográfico Grupos Móviles de Erradicación</td><td align="center" style="vertical-align:middle" style='padding-top:8px'><img  src='../css_js/images/info.png' onmouseover="adddiv()" onMouseOut="removediv()" width='50% id='iconinfo"></td></tr></table></h2>
+<h2 class="titlat2"><table width="100%" height="100%"><tr><td width="85%" style="vertical-align:middle">Visor geográfico Grupos Móviles de Erradicación</td><td align="center" style="vertical-align:middle" style='padding-top:8px'><img  src='./visor_PMJ_files/images/info.png' onmouseover="adddiv()" onMouseOut="removediv()" width='50% id='iconinfo"></td></tr></table></h2>
 
 <div id="info"  class="contexto"  style="display: none; position:absolute; top:8%; left:21%; z-index:100; opacity: 1"><b>Localización del punto</b><br></div>
 
@@ -224,7 +220,7 @@ require_once("AVB_geojson2016.php");
 	<input id="checkNS2016" type="checkbox" checked="" onclick="leyendaccion()"><img src="visor_PMJ_files/images/alerta2.ico" width='5%'><label> Novedades de seguridad 2016</label><span class="spaner" id="T_ns_16"><script>var x=NS_16.features.length;
 	document.getElementById("T_ns_16").innerHTML=x;</script></span><br>
 	
-	<input id="den2014" type="checkbox"  onclick="leyendaccion()"><img src="visor_PMJ_files/images/densidad2.png" width='5%'><label> Densidad cultivos ilícitos </label> <img  src='../css_js/images/info.png' onclick="popup_den()" width='3% id='iconinfo"><span class="spaner" id="T_ns_16">2014</span><br>
+	<input id="den2014" type="checkbox"  onclick="leyendaccion()"><img src="visor_PMJ_files/images/densidad2.png" width='5%'><label> Densidad cultivos ilícitos </label> <img  src='./visor_PMJ_files/images/info.png' onclick="popup_den()" width='3% id='iconinfo"><span class="spaner" id="T_ns_16">2014</span><br>
 	
 	<input id="checkparques" type="checkbox"  onclick="leyendaccion()"><font color="#66A666" >&#9608</font><label> Parques Nacionales</label><span class="spaner">56</span><br>
 	
@@ -250,19 +246,15 @@ require_once("AVB_geojson2016.php");
 
 
 <div id="map">
-<script type="text/javascript" charset="utf-8" src="./visor_PMJ_files/parques2.js"></script>
-<script type="text/javascript" charset="utf-8" src="./visor_PMJ_files/Resguardos2.js"></script>
-<script type="text/javascript" charset="utf-8" src="./visor_PMJ_files/municipios.js"></script>
-<script type="text/javascript" charset="utf-8" src="./visor_PMJ_files/tc.js"></script>
-<script type="text/javascript" charset="utf-8" src="./visor_PMJ_files/Ley2da.js"></script>
-<script type="text/javascript" charset="utf-8" src="./visor_PMJ_files/or.js"></script>
-<script type="text/javascript" charset="utf-8" src="./visor_PMJ_files/RUNAT.js"></script>
-<script type="text/javascript" charset="utf-8" src="../json/colombia_line.js"></script>
-<script type="text/javascript" charset="utf-8" src="./visor_PMJ_files/TC_2012.js"></script>
-<script type="text/javascript" charset="utf-8" src="./visor_PMJ_files/TC_2013.js"></script>
-<script type="text/javascript" charset="utf-8" src="./visor_PMJ_files/TC_2014.js"></script>
-<script type="text/javascript" charset="utf-8" src="./visor_PMJ_files/map.js"></script>
-<script src="./visor_PMJ_files/Distance.js"></script>
+<script type="text/javascript" charset="utf-8" src="./visor_PMJ_files/js/parques2.js"></script>
+<script type="text/javascript" charset="utf-8" src="./visor_PMJ_files/js/Resguardos2.js"></script>
+<script type="text/javascript" charset="utf-8" src="./visor_PMJ_files/js/municipios.js"></script>
+<script type="text/javascript" charset="utf-8" src="./visor_PMJ_files/js/tc.js"></script>
+<script type="text/javascript" charset="utf-8" src="./visor_PMJ_files/js/Ley2da.js"></script>
+<script type="text/javascript" charset="utf-8" src="./visor_PMJ_files/js/or.js"></script>
+<script type="text/javascript" charset="utf-8" src="./visor_PMJ_files/js/colombia_line.js"></script>
+<script type="text/javascript" charset="utf-8" src="./visor_PMJ_files/js/map.js"></script>
+<script src="./visor_PMJ_files/js/Distance.js"></script>
 <link rel="stylesheet" href="http://leaflet.github.io/Leaflet.draw/leaflet.draw.css" />
 <script src="http://leaflet.github.io/Leaflet.draw/leaflet.draw.js"></script>
 
